@@ -21,10 +21,6 @@ row는 가로 정렬 , column 세로 정렬이다.
 
 세로로 정렬하고 싶다면 
 
-```css
-flex-direction : column;
-```
-
 #### justify-content
 
 main axis(기준축, row 혹은 column)을 기준으로 요소의 위치 결정
@@ -34,6 +30,8 @@ main axis(기준축, row 혹은 column)을 기준으로 요소의 위치 결정
 `space-between`: 요소를 양 끝점에 정렬한 뒤 그 사이 요소들을 동일한 간격으로 정렬
 
 `space-around`: 요소들의 양 옆 공간을 동일하게 하여 정렬
+
+`space-evenly`: 요소들을 동일한 간격으로 정렬
 
 ```css
 justify-content: center;
@@ -52,5 +50,15 @@ cross axis(main axis에 수직으로 연하는 축)를 기준으로 요소의 �
 `flex-end`: 아이템을 맨 끝에.
 
 등등.
+
+#### flex-direction: column;
+
+```css
+flex-direction : column;
+```
+
+으로 지정하면 main axis는 수직, 세로가 되고, cross axis는 수평, 가로가 된다.
+
+요소는 main axis를 따라 세로로 정렬된다.
 
 ## CSS grid
