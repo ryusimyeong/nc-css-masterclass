@@ -33,6 +33,8 @@ main axis(기준축, row 혹은 column)을 기준으로 요소의 위치 결정
 
 `space-evenly`: 요소들을 동일한 간격으로 정렬
 
+
+
 ```css
 justify-content: center;
 ```
@@ -61,4 +63,37 @@ flex-direction : column;
 
 요소는 main axis를 따라 세로로 정렬된다.
 
+### 1.5 align-self and order
+
+flexbox에서 자식에게 줄 수 있는 요소는 두 가지 뿐이다. align-self와 order
+
+#### align-self
+
+flexbox의 자식요소에 지정
+
+align-items와 비슷하지만 자식요소 개별로 지정 가능
+
+```css
+.children:nth-child(2) {
+  align-self: center;
+}
+```
+
+flex-direction: row에서 align을 정상적으로 작동하게 하고 싶으면 parent에 height를 줘야 한다.
+
+#### order
+
+HTML을 건드리지 않고 요소의 순서 변경.
+
+모든 요소의 order의 기본값은 0이다.
+
+```css
+.children:nth-child(2) {
+  order: 1;
+}
+```
+
+이런식으로 지정하면 1, 3의 order는 0이기 때문에 두 번째 요소는 마지막에 배치된다.
+
 ## CSS grid
+

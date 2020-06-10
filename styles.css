@@ -1,15 +1,18 @@
-.wrapper {
+.parent {
   display: flex;
   /* main axis */
   justify-content: space-evenly;
   /* cross axis */
-  align-items: center;
   height: 100vh;
 }
 
-.box {
+.children {
   width: 200px;
   height: 200px;
   background-color: peru;
   color: white;
+}
+
+.children:nth-child(2) {
+  order: 1;
 }
