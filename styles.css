@@ -1,32 +1,33 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-template-rows: repeat(4, 200px);
-  /* 콤마를 쓰지 않는다. */
-  grid-template-areas:
-    "header header header header"
-    "content content content nav"
-    "content content content nav"
-    "footer footer footer footer";
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
 }
 
 .header {
   background: green;
-  /* string으로 적지 않는다. */
-  grid-area: header;
+  /* 컬럼이 아니라 line */
+  /* grid에 그어진 줄을 1번부터 센다. 아래 코드는 네 칸을 차지한다. */
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
-
 .content {
   background: yellow;
-  grid-area: content;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 
 .nav {
   background: red;
-  grid-area: nav;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 
 .footer {
   background: blue;
-  grid-area: footer;
+  grid-column-start: 1;
+  grid-column-end: 5;
 }

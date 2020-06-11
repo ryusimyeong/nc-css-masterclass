@@ -234,3 +234,48 @@ repeat(개수, 크기) 함수
 ```
 
 지정한 영역대로 css가 적용된다.
+
+### 2.3 Rows and Columns
+
+<img src="./assets/grid-example.png" />
+
+숫자는 컬럼이나 로우가 아니라 grid의 선이다.
+
+즉, 1칸을 선택하려면 start는 1, end는 2가 되어야 한다.
+
+```css
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.header {
+  background: green;
+  /* 컬럼이 아니라 line */
+  /* grid에 그어진 줄을 1번부터 센다. 아래 코드는 네 칸을 차지한다. */
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.content {
+  background: yellow;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.nav {
+  background: red;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.footer {
+  background: blue;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+```
