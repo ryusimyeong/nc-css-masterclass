@@ -4,10 +4,7 @@
   justify-content: space-evenly;
   /* cross axis */
   align-items: flex-start;
-  /* flex-wrap */
-  flex-wrap: wrap;
-  align-content: space-between;
-  height: 150vh;
+  height: 100vh;
 }
 
 .children {
@@ -19,4 +16,9 @@
   background-color: peru;
   color: white;
   font-size: 25px;
+}
+
+.children:nth-child(2) {
+  background: #000;
+  flex-shrink: 1;
 }
