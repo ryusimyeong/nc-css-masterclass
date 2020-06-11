@@ -9,10 +9,10 @@
 
 .children {
   display: flex;
+  flex-basis: 300px;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+
   background-color: peru;
   color: white;
   font-size: 25px;
@@ -20,5 +20,5 @@
 
 .children:nth-child(2) {
   background: #000;
-  flex-shrink: 1;
+  flex-wrap: 1;
 }
