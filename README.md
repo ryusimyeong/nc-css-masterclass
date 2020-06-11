@@ -121,6 +121,8 @@ wrap으로 바꾸면 너비는 유지되고 요소들이 다음줄로 넘어간�
 }
 ```
 
+`flex-flow` 속성은 row wrap, column wrap 과 같이 direction과 한 번에 적용 가능하다.
+
 ### 1.7 flex-grow, flex-shrink
 
 flex-grow, flex-shrink은 자식에게 주는 속성
@@ -155,3 +157,80 @@ shrink와 비슷하지만 반대의 기능이다.
 
 ## CSS grid
 
+### 2.0 Life Before Grid
+
+flexbox 만으로극 격자 무늬를 만들기 어렵다.
+
+### 2.1 CSS Grid Basic Concepts
+
+grid도 기본적으로 부모 요소에서 시작한다.
+
+```css
+.parent {
+  display: grid;
+  /* column의 개수 및 크기 */
+  grid-template-columns: 250px 250px 250px;
+  /* row의 개수 및 크기 */
+  grid-template-rows: 250px 250px 250px;
+  /* column의 간격 */
+  column-gap: 10px;
+  /* row의 간격 */
+  row-gap: 10px;
+}
+```
+
+### 2.2 Grid Template Areas
+
+repeat(개수, 크기) 함수
+
+위와 아래는 같다.
+```css
+.grid {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+}
+```
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+}
+```
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  /* 콤마를 쓰지 않는다. */
+  grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
+}
+
+.header {
+  background: green;
+  /* string으로 적지 않는다. */
+  grid-area: header;
+}
+
+.content {
+  background: yellow;
+  grid-area: content;
+}
+
+.nav {
+  background: red;
+  grid-area: nav;
+}
+
+.footer {
+  background: blue;
+  grid-area: footer;
+}
+```
+
+지정한 영역대로 css가 적용된다.

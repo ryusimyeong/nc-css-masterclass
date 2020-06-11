@@ -1,24 +1,32 @@
-.parent {
-  display: flex;
-  /* main axis */
-  justify-content: space-evenly;
-  /* cross axis */
-  align-items: flex-start;
-  height: 100vh;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  /* 콤마를 쓰지 않는다. */
+  grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
 }
 
-.children {
-  display: flex;
-  flex-basis: 300px;
-  justify-content: center;
-  align-items: center;
-
-  background-color: peru;
-  color: white;
-  font-size: 25px;
+.header {
+  background: green;
+  /* string으로 적지 않는다. */
+  grid-area: header;
 }
 
-.children:nth-child(2) {
-  background: #000;
-  flex-wrap: 1;
+.content {
+  background: yellow;
+  grid-area: content;
+}
+
+.nav {
+  background: red;
+  grid-area: nav;
+}
+
+.footer {
+  background: blue;
+  grid-area: footer;
 }
