@@ -95,5 +95,31 @@ HTML을 건드리지 않고 요소의 순서 변경.
 
 이런식으로 지정하면 1, 3의 order는 0이기 때문에 두 번째 요소는 마지막에 배치된다.
 
+### 1.6 wrap, nowrap, reverse, align-content
+
+기본적으로 flexbox는 너비가 바뀌는 한이 있더라도 한 줄에 정렬된다.
+
+`flex-wrap` 의 기본값은 `nowrap`
+
+wrap으로 바꾸면 너비는 유지되고 요소들이 다음줄로 넘어간다.
+
+줄과 줄 사이의 간격을 조절하는 방법은 `align-content` 
+
+`align-content`를 flex-start로 하면 줄 간격이 사라진다. `center`는 화면의 가운데
+
+```css
+.parent {
+  display: flex;
+  /* main axis */
+  justify-content: space-evenly;
+  /* cross axis */
+  align-items: flex-start;
+  /* flex-wrap */
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 150vh;
+}
+```
+
 ## CSS grid
 
