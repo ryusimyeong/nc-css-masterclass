@@ -8,26 +8,22 @@
 .header {
   background: green;
   /* 컬럼이 아니라 line */
-  /* grid에 그어진 줄을 1번부터 센다. 아래 코드는 네 칸을 차지한다. */
-  grid-column-start: 1;
-  grid-column-end: 5;
+  /* span은 줄이 아니라 칸 수. 음수는 안 된다. */
+  grid-column: span 4;
 }
+/* span을 사용할 때 시작점이 필요하면 지정할 수 있다. */
 .content {
   background: yellow;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-column: 1 / -2;
+  grid-row: span 2;
 }
 
 .nav {
   background: red;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row: span 2;
 }
 
 .footer {
   background: blue;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column: 1 / 5;
 }

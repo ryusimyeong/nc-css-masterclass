@@ -279,3 +279,90 @@ repeat(개수, 크기) 함수
 }
 
 ```
+
+### 2.4 Shortcuts
+
+grid start, end를 한 번에 처리할 수 있다.
+
+```css
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.header {
+  background: green;
+  /* 컬럼이 아니라 line */
+  /* start 1, end 5 */
+  grid-column: 1 / 5;
+}
+.content {
+  background: yellow;
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}
+
+.nav {
+  background: red;
+  grid-row: 2 / 4;
+}
+
+.footer {
+  background: blue;
+  grid-column: 1 / 5;
+}
+```
+
+line수를 직접 세는 것보다 시작, 마지막 이런 식으로 적는 게 낫다.
+
+즉, line이 몇 개가 생길지는 모르지만, 마지막, 혹은 마지막 전까지 생성하고 싶다. 그러면 -1, -2 등으로 쓴다.
+
+```css
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.header {
+  background: green;
+  /* 컬럼이 아니라 line */
+  /* grid에 그어진 줄을 1번부터 센다. 아래 코드는 네 칸을 차지한다. */
+  /* -1은 마지막 줄, -2는 마지막 그 다음 */
+  grid-column: 1 / -1;
+}
+.content {
+  background: yellow;
+  grid-column: 1 / -2;
+  grid-row: 2 / -2;
+}
+
+.nav {
+  background: red;
+  grid-row: 2 / 4;
+}
+
+.footer {
+  background: blue;
+  grid-column: 1 / 5;
+}
+```
+
+line이 아니라 칸 숫자로 하고 싶으면 span을 사용한다.
+```css
+.header {
+  background: green;
+  /* 컬럼이 아니라 line */
+  /* span은 줄이 아니라 칸 수. 음수는 안 된다. */
+  grid-column: span 4;
+}
+/* span을 사용할 때 시작점이 필요하면 지정할 수 있다. */
+.content {
+  background: yellow;
+  grid-column: span 3;
+  grid-row: 2 / span 2;
+}
+```
