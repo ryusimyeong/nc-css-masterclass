@@ -402,3 +402,61 @@ fr은 비율이다.
   grid-template-rows: repeat(4, 1fr);
 }
 ```
+
+grid-template 사용하기
+
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  height: 50vh;
+  grid-template:
+    /* "area" row의 길이 / 각 column의 길이  */
+    "header header header header" 1fr
+    "content content content nav" 2fr
+    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+}
+```
+
+### 2.7 Place Items
+
+grid 컨테이너가 grid를 갖고 있고
+
+justify-items의 기본 값은 stretch
+
+justify-items은 수평
+
+align-items는 수직. 기본값은 역시 stretch
+
+stretch면 해당 grid를 가닥 채운다ㅏ.
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: stretch;
+}
+```
+
+start, center, end 등으로 위치를 이동시킬 수 있다.
+
+place-items: 수직 수평
+
+을 사용하면 한 번에 할 수 있다.
+
+```css
+.grid {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+```
+
+```css
+.grid {
+  display: grid;
+  place-items: center center;
+}
+```
