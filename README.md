@@ -366,3 +366,14 @@ line이 아니라 칸 숫자로 하고 싶으면 span을 사용한다.
   grid-row: 2 / span 2;
 }
 ```
+
+### 2.5 Line Naming
+
+line에 이름을 붙여서 사용할 수도 있다.
+
+```css
+grid-template-columns:
+    [first] 100px [second] 100px [third] 100px
+    [fourth] 100px [fifth];
+grid-column: first / fourth;
+```

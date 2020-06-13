@@ -1,7 +1,9 @@
 .grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns:
+    [first] 100px [second] 100px [third] 100px
+    [fourth] 100px [fifth];
   grid-template-rows: repeat(4, 100px);
 }
 
@@ -14,7 +16,7 @@
 /* span을 사용할 때 시작점이 필요하면 지정할 수 있다. */
 .content {
   background: yellow;
-  grid-column: 1 / -2;
+  grid-column: first / fourth;
   grid-row: span 2;
 }
 
