@@ -372,8 +372,33 @@ line이 아니라 칸 숫자로 하고 싶으면 span을 사용한다.
 line에 이름을 붙여서 사용할 수도 있다.
 
 ```css
-grid-template-columns:
+.grid {
+  grid-template-columns:
     [first] 100px [second] 100px [third] 100px
     [fourth] 100px [fifth];
-grid-column: first / fourth;
+  grid-column: first / fourth;
+}
+```
+
+### 2.6 Grid Template
+
+fraction은 사용 가능한 공간. 
+
+repeat(4, 1fr) 
+
+이라고 하면 내가 설정한 grid의 width 내에서 4번 반복할 수 있는 크기고 나뉜다.
+
+fr은 비율이다. 
+
+화면 크기에 맞춰 자동 조절되기 때문에 반응형 웹페이지를 만들 때 유용하다.
+
+```css
+.grid {
+  display: grid;
+  gap: 10px;
+  width: 80vw;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
 ```

@@ -1,31 +1,30 @@
 .grid {
   display: grid;
-  gap: 10px;
-  grid-template-columns:
-    [first] 100px [second] 100px [third] 100px
-    [fourth] 100px [fifth];
-  grid-template-rows: repeat(4, 100px);
+  gap: 5px;
+  height: 50vh;
+  grid-template:
+    /* "area" row의 길이 / 각 column의 길이  */
+    "header header header header" 1fr
+    "content content content nav" 2fr
+    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
 }
 
 .header {
   background: green;
-  /* 컬럼이 아니라 line */
-  /* span은 줄이 아니라 칸 수. 음수는 안 된다. */
-  grid-column: span 4;
+  grid-area: header;
 }
-/* span을 사용할 때 시작점이 필요하면 지정할 수 있다. */
+
 .content {
   background: yellow;
-  grid-column: first / fourth;
-  grid-row: span 2;
+  grid-area: content;
 }
 
 .nav {
   background: red;
-  grid-row: span 2;
+  grid-area: nav;
 }
 
 .footer {
   background: blue;
-  grid-column: 1 / 5;
+  grid-area: footer;
 }
