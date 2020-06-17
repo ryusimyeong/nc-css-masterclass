@@ -460,3 +460,37 @@ place-items: 수직 수평
   place-items: center center;
 }
 ```
+### 2.9 Place content
+
+items: grid의 cell 하나하나
+
+content: grid 전체
+
+justify-content의 기본값은 start
+
+```css
+.grid {
+  justify-content: start;
+}
+```
+
+space-around 등도 가능하다
+
+align-content도 그렇다.
+
+justify-content는 수평, align-content는 수직. 
+
+```css
+.grid {
+  align-content: space-around;
+}
+```
+
+place-content도 가능하다. 수직 수평 순
+
+```css
+.grid {
+  place-content: end center;
+}
+```
+
