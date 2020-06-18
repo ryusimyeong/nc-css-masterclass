@@ -490,6 +490,8 @@ place-content도 가능하다. 수직 수평 순
 
 ```css
 .grid {
+  align-content: end;
+  justify-content: center;
   place-content: end center;
 }
 ```
