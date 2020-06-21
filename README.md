@@ -496,3 +496,53 @@ place-content도 가능하다. 수직 수평 순
 }
 ```
 
+### 2.10 Auto Columns and Rows
+
+align-self는 자식 요소에게 설정한다.
+
+justify-self도 마찬가지다.
+```css
+.header {
+  align-self: end;
+  justify-self: end;
+  /* 수직, 수평 */
+  place-self: end center;
+}
+```
+
+auto-rows, auto-column
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+```
+
+위처럼 설정하면 4개의 행, 열만 커버 가능하다.
+
+grid-auto-columns 혹은 grid-auto-rows를 사용하면 데이터베이스에서 가져오는 요소에 맞춰서 행과 열을 생성
+
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 100px);
+  grid-auto-rows: 100px;
+}
+```
+
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-auto-flow: column;
+}
+```
+
+그리드가 자동생성되는 방향을 바꾸고 싶다면 
+
+grid-auto-flow를 사용한다. default는 row이다.
