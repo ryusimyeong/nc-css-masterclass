@@ -546,3 +546,32 @@ grid-auto-columns 혹은 grid-auto-rows를 사용하면 데이터베이스에서
 그리드가 자동생성되는 방향을 바꾸고 싶다면 
 
 grid-auto-flow를 사용한다. default는 row이다.
+
+### 2.11 minmax
+
+요소가 가능한 커지길 바라지만 최소 크기를 갖길 원할 때 사용
+
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-auto-columns: 100px;
+}
+```
+
+위의 코드에서 1fr은 화면의 크기에 따라 크기가 달라진다.
+
+화면이 작아져도 박스의 크기를 일정이상 유지하고 싶을 때 minmax()를 사용한다.
+
+```css
+.grid {
+  display: grid;
+  gap: 5px;
+  /* minmax(최소, 최대) */
+  grid-template-columns: repeat(10, minmax(100px, 1fr));
+  grid-template-rows: repeat(4, 100px);
+  grid-auto-columns: 100px;
+}
+```
