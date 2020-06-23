@@ -602,3 +602,21 @@ auto-fit
 
 auto-fit한 요소는 빈 컬럼이 아니라 요소들의 크기가 화면에 맞춰 늘어난다.
 
+### 2.13 min-content max-content
+
+max-content
+
+박스가 content 크기만큼 커진다.
+
+min-content
+
+박스가 작아질 수 있을만큼 작아진다.
+
+```css
+.grid {
+  grid-template-columns: max-content min-content;
+}
+```
+
+minmax와 활용해서 최소값을 max-content, 최대값을 원하는 값으로 하면 좋다.
+
