@@ -2,9 +2,8 @@
   display: grid;
   gap: 5px;
   /* minmax(최소, 최대) */
-  grid-template-columns: repeat(10, minmax(100px, 1fr));
-  grid-template-rows: repeat(4, 100px);
-  grid-auto-columns: 100px;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-rows: repeat(5, 100px);
 }
 
 .item:nth-child(odd) {
@@ -13,4 +12,12 @@
 
 .item:nth-child(even) {
   background: blue;
+}
+
+.grid:first-child {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid:last-child {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }

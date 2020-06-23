@@ -575,3 +575,30 @@ grid-auto-flow를 사용한다. default는 row이다.
   grid-auto-columns: 100px;
 }
 ```
+
+### 2.12 auto-fit auto-fill
+
+반응형 웹을 만들 떄 필요하다.
+
+```css
+.grid:first-child {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid:last-child {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+```
+
+auto-fill
+
+우리가 준 사이즈 안에서 최대한 많은 column을 생성한다.
+
+auto-fit
+
+현재 row에 있는 요소들을 화면에 맞춰 크기를 조절한다. 
+
+화면을 키우면 auto-fill을 한 요소는 빈 컬럼이 늘어나고
+
+auto-fit한 요소는 빈 컬럼이 아니라 요소들의 크기가 화면에 맞춰 늘어난다.
+
