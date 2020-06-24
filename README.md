@@ -620,3 +620,86 @@ min-content
 
 minmax와 활용해서 최소값을 max-content, 최대값을 원하는 값으로 하면 좋다.
 
+### 3.0 CSS Preprocessors and Set Up
+
+SCSS 
+
+CSS 전처리기. 
+
+SCSS를 compile 해서 CSS 파일로 만든다.
+
+CSS를 프로그래밍 언어처럼 사용할 수 있다. 변수나 함수 등을 사용할 수 있다.
+
+compile과 build가 필요하다. 
+
+### 3.1 Variables and Nesting
+
+gulp는 src 내 styles.scss 파일을 보고 있다.
+
+이 scss 파일이 complile 되면 dist 폴더 내의 css 파일로 변환된다.
+
+variables
+
+SCSS 는 변수를 사용하여 CSS를 제어할 수 있다.
+
+가장 중요하거나 반복되는 요소를 저장해서 사용한다. 
+
+scss 파일을 `_variables.scss` 처럼 언더바를 앞에 붙이면 css로 컴파일 되지 않는다. 
+
+변수를 저장해둘 파일을 따로 만든다. 
+
+**_variables.scss**
+
+```scss
+// $를 이용해서 변수 생성
+$bg: #e74c3c;
+```
+
+해당 파일을 import 한다.
+
+**styles.scss**
+
+```scss
+// 변수 파일 import
+@import "_variables";
+
+body {
+  background: $bg;
+}
+```
+
+**nesting**
+
+```scss
+.box {
+  margin-top: 20px;
+}
+
+.box h2 {
+  color: blue;
+}
+
+.box:hover {
+  background-color: green;
+}
+```
+
+이런 식의 코드를
+
+```scss
+.box {
+  margin-top: 20px;
+
+  h2 {
+    color: blue;
+  }
+
+  &:hover {
+    background-color: green;
+  }
+}
+```
+
+이렇게 작성할 수 있다.
+
+**&**은 자기 자신을 뜻한다.

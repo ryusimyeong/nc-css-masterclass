@@ -1,0 +1,13 @@
+// 변수 파일 import
+@import "_variables";
+
+h2 {
+  color: $bg;
+}
+
+.box {
+  margin-top: 20px;
+  h2 {
+    color: blue;
+  }
+}
