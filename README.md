@@ -703,3 +703,89 @@ body {
 이렇게 작성할 수 있다.
 
 **&**은 자기 자신을 뜻한다.
+
+### 3.2 Mixins
+
+scss 구문 덩어리를 재사용하는 것
+
+**_mixins.scss** 파일을 만들고 아래 구문을 작성한다. 
+
+```scss
+@mixin sexyTitle {
+  color: blue;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+```
+
+**styles.scss**
+
+```scss
+@import "_mixins";
+
+h2 {
+  @include sexyTitle();
+}
+```
+
+mixins 파일을 import. mixin을 사용할 때 @include 어노테이션 사용. 함수를 실행하듯 ()로 로드.
+
+변수 또한 사용 가능하다.
+
+mixin을 만들 때는 **@mixin** 사용할 때는 **@include**
+
+#### mixins.scss
+
+```scss
+@mixin link($color) {
+  text-decoration: none;
+  display: block;
+  color: $color;
+}
+```
+
+#### styles.scss
+
+```scss
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link(blue);
+  }
+
+  &:nth-child(even) {
+    @include link(red);
+  }
+}
+```
+
+**if - else** 문도 가능하다.
+
+#### mixins.scss
+
+```scss
+@mixin link($word) {
+  text-decoration: none;
+  display: block;
+  @if $word == "odd" {
+    color: purple;
+  } @else {
+    color: yellow;
+  }
+}
+```
+
+#### styles.scss
+
+```scss
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
+  }
+
+  &:nth-child(even) {
+    @include link("even");
+  }
+}
+```

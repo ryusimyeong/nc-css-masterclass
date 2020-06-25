@@ -1,13 +1,17 @@
-// 변수 파일 import
 @import "_variables";
+@import "_mixins";
 
 h2 {
-  color: $bg;
+  @include sexyTitle();
 }
 
-.box {
-  margin-top: 20px;
-  h2 {
-    color: blue;
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
+  }
+
+  &:nth-child(even) {
+    @include link("even");
   }
 }
