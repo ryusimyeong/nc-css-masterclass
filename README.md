@@ -833,3 +833,32 @@ button {
   border: none;
 }
 ```
+
+### 3.4 Awesome Mixins and Conclusions
+
+**content** 어노테이션
+
+#### _mixins.scss
+
+```scss
+@mixin responsive {
+  @content;
+}
+```
+
+위와 같이 mixin 안에 `@content`를 선언하면
+
+#### styles.scss
+
+```scss
+@import "_mixins";
+
+a {
+  @include responsive {
+    text-decoration: none;
+    color: red;
+  }
+}
+```
+
+include로 사용해서 선언한 것들의 프로퍼티가 적용된다.
