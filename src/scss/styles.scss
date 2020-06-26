@@ -1,17 +1,12 @@
-@import "_variables";
-@import "_mixins";
-
-h2 {
-  @include sexyTitle();
-}
+@import "_button";
 
 a {
-  margin-bottom: 10px;
-  &:nth-child(odd) {
-    @include link("odd");
-  }
+  // extend 요소 사용하기.
+  @extend %button;
+  text-decoration: none;
+}
 
-  &:nth-child(even) {
-    @include link("even");
-  }
+button {
+  @extend %button;
+  border: none;
 }

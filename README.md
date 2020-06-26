@@ -706,6 +706,8 @@ body {
 
 ### 3.2 Mixins
 
+상황에 따라 다르게 코딩을 하고 싶으면 사용한다.
+
 scss 구문 덩어리를 재사용하는 것
 
 **_mixins.scss** 파일을 만들고 아래 구문을 작성한다. 
@@ -787,5 +789,47 @@ a {
   &:nth-child(even) {
     @include link("even");
   }
+}
+```
+
+### 3.3 Extends
+
+같은 코드를 중복해서 사용하고 싶지 않을 때 사용한다.
+
+페이지에서 분리해야 하는 요소들이 많을 때 유용하다. 버튼, 타이틀, 카드, 네비게이션 등
+
+익스텐드로 사용할 것을 선언할 때는 **%**를 사용하고, 그 설정을 사용할 때는 **@extend** 어노테이션을 사용한다.
+
+#### _button.scss
+
+```scss
+// extend 사용하기 "%"
+%button {
+  font-family: inherit;
+  border-radius: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: peru;
+  color: white;
+  font-weight: 500;
+}
+```
+
+#### styles.scss
+
+```scss
+@import "_button";
+
+a {
+  // extend 요소 사용하기.
+  @extend %button;
+  // 공통된 프로퍼티는 extend로 처리하고 별도로 처리해줄 건 따로 작성해준다.
+  text-decoration: none;
+}
+
+button {
+  @extend %button;
+  border: none;
 }
 ```
