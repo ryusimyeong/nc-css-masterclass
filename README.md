@@ -1645,3 +1645,224 @@ $bg: #af7732;
   </body>
 </html>
 ````
+
+### 4.7 Zoo
+
+CSS는 같은 속성에 다른 값을 지정하면 나중에 입력한 값을 적용한다.
+
+!important 키워드를 붙이면 이런 현상을 막고, 키워드가 적용된 속성을 적용한다.
+
+#### styles.scss
+
+```scss
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  nav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-size: 32px;
+    text-transform: lowercase;
+    ul {
+      display: flex;
+      align-items: center;
+      padding: 0px 15px;
+      &:hover {
+        background-color: gainsboro;
+      }
+      li {
+        cursor: pointer;
+        margin-right: 50px;
+      }
+      &:first-child {
+        &:hover {
+          li:not(:first-child) {
+            // 나중에 다른 값이 작성되더라도 white로 유지
+            color: white !important;
+          }
+        }
+        li {
+          &:first-child {
+            margin-right: 120px;
+          }
+          &:not(:first-child) {
+            color: gainsboro;
+            margin-right: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 45vh;
+  article {
+    cursor: pointer;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10fr 0.8fr;
+    img {
+      min-width: 100%;
+      height: 100%;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      padding-left: 10px;
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Zoo</li>
+          <li>Contact</li>
+          <li>Team</li>
+          <li>Clients</li>
+        </ul>
+        <ul>
+          <li>Projects</li>
+          <li>Tours</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <img src="https://source.unsplash.com/random/450x450" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x451" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x452" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x453" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x454" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x455" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x456" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x457" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x458" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x459" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x460" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x461" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x462" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x463" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+      <article>
+        <img src="https://source.unsplash.com/random/450x464" />
+        <div>
+          <h3>Moco Montpellier Contemporain</h3>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
+
+```
+
