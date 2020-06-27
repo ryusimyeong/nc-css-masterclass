@@ -862,3 +862,72 @@ a {
 ```
 
 include로 사용해서 선언한 것들의 프로퍼티가 적용된다.
+
+반응형을 만들 때 유용하다.
+
+#### _mixins.scss
+
+```scss
+$minIphone: 500px;
+$maxIphone: 690px;
+$minTablet: 501px;
+$maxTablet: 1120px;
+
+@mixin responsive($device) {
+  @if $device == "iphone" {
+    @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
+      @content;
+    }
+  } @else if $device == "tablet" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  } @else if $device == "iphone-l" {
+    @media screen and (min-width: $minIphone) and (max-width: $maxIphone) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $device == "ipad-l" {
+    @media screen and (min-width: $minIphone) and (max-width: $maxIphone) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+```
+
+#### styles.scss
+
+```scss
+@import "_mixins";
+
+h1 {
+  color: red;
+  @include responsive("iphone") {
+    color: yellow;
+  }
+  @include responsive("iphone-l") {
+    font-size: 60px;
+  }
+  @include responsive("tablet") {
+    color: green;
+  }
+}
+```
+
+### 4.2 Best Horror Scenes Comment
+
+사이드바 고정하기 -> main 콘텐츠에 사이드바 크기만큼 margin left 혹은 right를 준다. 
+
+그리고 사이드바를 position fixed 한다.
+
+#### 새로 배운 속성
+
+```scss
+h1 {
+    // 문단 설정. 좌로, 중앙, 우로 정렬 등
+    text-align: justify;
+    // 영어를 실수 없이 반드시 대문자로 바꾸고 싶을 때 사용
+    text-transform: uppercase;
+    // 자간
+    // 단어 간격은 word-spacing
+    letter-spacing: 5px;
+```
