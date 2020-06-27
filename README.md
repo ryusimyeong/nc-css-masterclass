@@ -919,15 +919,594 @@ h1 {
 
 그리고 사이드바를 position fixed 한다.
 
-#### 새로 배운 속성
+#### styles.scss
 
 ```scss
-h1 {
-    // 문단 설정. 좌로, 중앙, 우로 정렬 등
-    text-align: justify;
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $fixedWidth;
+  height: 100%;
+  padding: 5vh 0 100px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $red;
+  h1 {
+    font-size: 85px;
+    width: 50%;
     // 영어를 실수 없이 반드시 대문자로 바꾸고 싶을 때 사용
     text-transform: uppercase;
     // 자간
     // 단어 간격은 word-spacing
     letter-spacing: 5px;
+    margin-bottom: 40px;
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+}
+
+h3,
+p {
+  width: 70%;
+  line-height: 1.2;
+  // 문단 설정. 좌로, 중앙, 우로 정렬 등
+  text-align: justify;
+}
+
+p {
+  font-weight: 300;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+nav {
+  width: 80%;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      cursor: pointer;
+      margin-right: 12px;
+      font-size: 20px;
+      color: black;
+      opacity: 0.5;
+      padding-bottom: 5px;
+      border-bottom: 2px solid rgba(0, 0, 0, 1);
+      margin-bottom: 20px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+main {
+  margin-left: $fixedWidth;
+  .movie {
+    // 위에서 아래로 음영
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 2%,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      )
+      $red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    .wrapper {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      .movie__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 25px;
+      }
+      h4 {
+        font-size: 32px;
+        text-transform: uppercase;
+      }
+      h5 {
+        letter-spacing: 2px;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+```
+
+#### _variables.scss
+
+```scss
+$red: #e7473c;
+$white: #f0eff0;
+$fixedWidth: 33%;
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <h1>Best Horror Scenes</h1>
+      <div class="bottom">
+        <h3>
+          An ever growing collection featuring some of the best scenes in
+          horror.
+        </h3>
+        <p>
+          “Best Horror Scenes” is a collection of scenes I feel are some of the
+          most affecting in horror. Some may be simple black cat scares, others
+          may be more subdued or nuanced. Many come from films that aren't
+          necessarily “horror” but have elements or threads of horror, and all
+          have the same general effect: unease, dread, fear, shock, disgust.
+        </p>
+        <nav>
+          <ul>
+            <li>Watch on YouTube</li>
+            <li>Suggest a Scene</li>
+            <li>Get Episode Notices</li>
+            <li>Contact</li>
+            <li>RSS</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="movie">
+        <div class="wrapper">
+          <div class="movie__header">
+            <h4>38. Hereditary (2018)</h4>
+            <h5>Directed by Me</h5>
+          </div>
+          <img src="./assets/sample.png" alt="sample" />
+        </div>
+      </section>
+      <section class="movie">
+        <div class="wrapper">
+          <div class="movie__header">
+            <h4>38. Hereditary (2018)</h4>
+            <h5>Directed by Me</h5>
+          </div>
+          <img src="./assets/sample.png" alt="sample" />
+        </div>
+      </section>
+      <section class="movie">
+        <div class="wrapper">
+          <div class="movie__header">
+            <h4>38. Hereditary (2018)</h4>
+            <h5>Directed by Me</h5>
+          </div>
+          <img src="./assets/sample.png" alt="sample" />
+        </div>
+      </section>
+      <section class="movie">
+        <div class="wrapper">
+          <div class="movie__header">
+            <h4>38. Hereditary (2018)</h4>
+            <h5>Directed by Me</h5>
+          </div>
+          <img src="./assets/sample.png" alt="sample" />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+```
+
+### 4.4 Paint Box
+
+#### styles.scss
+
+```scss
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Caladea:400&display=swap");
+@import "_titles";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  @extend %miniTitle;
+}
+
+body {
+  font-family: "Caladea";
+  padding-top: 70px;
+}
+
+// body 내 .footer를 제외한 모든 요소
+// > 없이 하면 모든 요소가 되니까 직계 자손인 것들만 선택
+body > *:not(.footer) {
+  padding: 0px 140px;
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 140px;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 10px;
+      @extend %miniTitle;
+      &:first-child {
+        li {
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1583248369069-9d91f1640fe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  h4 {
+    @extend %miniTitle;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 48px;
+    width: 35%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  a {
+    width: 10%;
+    background-color: white;
+    padding: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    @extend %miniTitle;
+    font-size: 10px;
+    // 버튼 애니메이션
+    transition: color 0.3s linear, background-color 0.3s linear;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.under-hero {
+  height: 80vh;
+  display: flex;
+  width: 100%;
+  margin-bottom: 80px;
+
+  img,
+  div {
+    width: 50%;
+  }
+
+  .under-hero__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        @extend %miniTitle;
+        margin-bottom: 30px;
+      }
+      h3 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      a {
+        border: 1px solid black;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.blog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 60vh);
+  margin-bottom: 80px;
+  .blog__post {
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // order를 활용해서 엇갈리는 grid
+    &:nth-child(even) {
+      img {
+        order: 1;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .post__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .post__date {
+        @extend %miniTitle;
+        margin-bottom: 70px;
+      }
+      h4 {
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  .gallery__poster {
+    cursor: pointer;
+    height: 100%;
+    img {
+      max-width: 100%;
+      height: 100%;
+      transition: opacity 0.3s linear;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 65px 0;
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @extend %miniTitle;
+    .column__title {
+      margin-bottom: 50px;
+      opacity: 0.5;
+    }
+    ul {
+      text-align: center;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+
+    &:nth-child(2) {
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+    }
+  }
+}
+
+```
+
+#### _variables.scss
+
+```scss
+$bg: #f3ede8;
+$sideSpace: 140px;
+
+```
+
+#### _titles.scss
+
+```scss
+%miniTitle {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Nail Studios</li>
+          <li>Shop Polish</li>
+        </ul>
+        <ul>
+          <li>Journal</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="hero">
+      <h4>The Uptown Collection</h4>
+      <h3>
+        Meet our newest nails, designed in collaboration with our friends on the
+        Upper East Side.
+      </h3>
+      <a href="#">Read More</a>
+    </div>
+    <section class="under-hero">
+      <img src="./assets/sample.png" alt="sample" />
+      <div class="under-hero__content">
+        <div class="wrapper">
+          <h4>The Studio</h4>
+          <h3>
+            Book a manicure at our Soho flagship studio or our new Uptown
+            studio, 20 East 69th Street at Madison Avenue.
+          </h3>
+          <a href="#">Book a Manicure</a>
+        </div>
+      </div>
+    </section>
+    <section class="blog">
+      <article class="blog__post">
+        <img src="./assets/sample.png" />
+        <div class="post__content">
+          <span class="post__date">Feb 25, 2020</span>
+          <h4>New and Now: The Uptown Collection</h4>
+          <a href="#">Read Story</a>
+        </div>
+      </article>
+      <article class="blog__post">
+        <img src="./assets/sample.png" />
+        <div class="post__content">
+          <span class="post__date">Feb 25, 2020</span>
+          <h4>New and Now: The Uptown Collection</h4>
+          <a href="#">Read Story</a>
+        </div>
+      </article>
+      <article class="blog__post">
+        <img src="./assets/sample.png" />
+        <div class="post__content">
+          <span class="post__date">Feb 25, 2020</span>
+          <h4>New and Now: The Uptown Collection</h4>
+          <a href="#">Read Story</a>
+        </div>
+      </article>
+    </section>
+    <section class="gallery">
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+      <div class="gallery__poster">
+        <img src="./assets/sample.png" alt="" />
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__column">
+        <span class="column__title">Support</span>
+        <ul>
+          <li>F.A.Q.</li>
+          <li>Privacy Policu</li>
+          <li>Terms and Conditions</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <span class="column__title">Follow Us</span>
+        <ul>
+          <li>Instagram</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <span class="column__title">Support</span>
+        <ul>
+          <li>F.A.Q.</li>
+          <li>Privacy Policu</li>
+          <li>Terms and Conditions</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+
 ```
