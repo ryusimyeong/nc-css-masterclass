@@ -1868,3 +1868,322 @@ main {
 
 ### 4.9 Schwartz Coding
 
+px로 사칙연산을 할 수 있다.
+
+```scss
+$fontMedium: 30px - 5px;
+```
+
+#### _elements.scss
+
+```scss
+@import "_variables";
+
+%categoryTitle {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+
+%btn {
+  text-decoration: none;
+  color: inherit;
+  border: $border;
+  padding: 10px 40px;
+  font-weight: 500;
+  border-radius: 99px;
+  transition: background-color 0.2s linear;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+```
+
+#### _variables.scss
+
+```scss
+$fontMedium: 30px;
+$border: 0.5px solid rgba(0, 0, 0, 0.3);
+
+```
+
+#### styles.scss
+
+```scss
+@import "_variables";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  line-height: 1.6;
+  width: 55%;
+  margin: 0 auto;
+}
+
+p {
+  font-size: $fontMedium;
+}
+
+.hero {
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+  .hero__photo {
+    height: 70vh;
+    width: 100%;
+    background-image: url("https://source.unsplash.com/random/");
+    background-size: cover;
+    background-position: center center;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 32px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+  p {
+    font-size: $fontMedium;
+    span {
+      // 변수를 이용한 사칙 연산이 가능하다.
+      font-size: $fontMedium - 5px;
+      margin-right: 50px;
+      font-weight: 500;
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px 0;
+    border-top: $border;
+    grid-column-start: span 2;
+    &:nth-child(even) {
+      div {
+        order: 1;
+      }
+    }
+    p {
+      margin-bottom: 50px;
+    }
+    .product__category {
+      @extend %categoryTitle;
+    }
+  }
+  .line {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-start: span 2;
+    gap: 10px;
+    .product {
+      grid-template-columns: 1fr;
+      grid-column-start: span 1;
+      p {
+        font-size: 22px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.links {
+  margin-top: 100px;
+  display: grid;
+  border-top: $border;
+  padding-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 200px;
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    h4 {
+      @extend %categoryTitle;
+      margin-bottom: 30px;
+    }
+    span {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+a.btn {
+  @extend %btn;
+}
+
+footer {
+  background-color: #4d4c4c;
+  width: 100%;
+  padding: 100px 0;
+  .footer__top {
+    width: 55%;
+    margin: auto;
+    color: white;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    span {
+      font-size: 38px;
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+```
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <div class="hero__photo"></div>
+        <h2>News that lasts.</h2>
+        <p>
+          <span>About</span> Schwartz Media publishes intelligent news and
+          current affairs that breaks the 24-hour news cycle. We offer a nuanced
+          examination of Australia and the world, focused on fresh insight and
+          literary expression. Our audience reads to know, not just to agree. We
+          invest in long-form journalism where the issues demand it, providing
+          writing of a quality that makes difficult topics clear. Schwartz Media
+          publishes Australia’s most respected writers across The Saturday
+          Paper, The Monthly magazine and the daily podcast 7am, alongside our
+          sister publications, Quarterly Essay and Australian Foreign Affairs.
+        </p>
+      </div>
+      <section class="products">
+        <article class="product">
+          <div>
+            <h4 class="product__category">Journalism</h4>
+            <p class="product__description">
+              Our journalists create in-depth, independent, original public
+              interest reporting, focusing on storytelling and insight.
+            </p>
+            <a href="#" class="btn">Learn more</a>
+          </div>
+          <img src="https://source.unsplash.com/random/500x360" />
+        </article>
+        <article class="product">
+          <div>
+            <h4 class="product__category">Journalism</h4>
+            <p class="product__description">
+              Our journalists create in-depth, independent, original public
+              interest reporting, focusing on storytelling and insight.
+            </p>
+            <a href="#" class="btn">Learn more</a>
+          </div>
+          <img src="https://source.unsplash.com/random/500x360" />
+        </article>
+        <article class="product">
+          <div>
+            <h4 class="product__category">Journalism</h4>
+            <p class="product__description">
+              Our journalists create in-depth, independent, original public
+              interest reporting, focusing on storytelling and insight.
+            </p>
+            <a href="#" class="btn">Learn more</a>
+          </div>
+          <img src="https://source.unsplash.com/random/500x360" />
+        </article>
+        <article class="product">
+          <div>
+            <h4 class="product__category">Journalism</h4>
+            <p class="product__description">
+              Our journalists create in-depth, independent, original public
+              interest reporting, focusing on storytelling and insight.
+            </p>
+            <a href="#" class="btn">Learn more</a>
+          </div>
+          <img src="https://source.unsplash.com/random/500x360" />
+        </article>
+        <div class="line">
+          <article class="product">
+            <div>
+              <h4 class="product__category">Journalism</h4>
+              <img src="https://source.unsplash.com/random/500x360" />
+              <p class="product__description">
+                Our journalists create in-depth, independent, original public
+                interest reporting, focusing on storytelling and insight.
+              </p>
+              <a href="#" class="btn">Learn more</a>
+            </div>
+          </article>
+          <article class="product">
+            <div>
+              <h4 class="product__category">Journalism</h4>
+              <img src="https://source.unsplash.com/random/500x360" />
+              <p class="product__description">
+                Our journalists create in-depth, independent, original public
+                interest reporting, focusing on storytelling and insight.
+              </p>
+              <a href="#" class="btn">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div class="links">
+        <div class="link">
+          <h4>Careers</h4>
+          <span>Work at the country’s leading independent publisher. </span>
+          <a href="#" class="btn">Learn more</a>
+        </div>
+        <div class="link">
+          <h4>Careers</h4>
+          <span>Work at the country’s leading independent publisher. </span>
+          <a href="#" class="btn">Learn more</a>
+        </div>
+        <div class="link">
+          <h4>Careers</h4>
+          <span>Work at the country’s leading independent publisher. </span>
+          <a href="#" class="btn">Learn more</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer__top">
+        <span>Schwartz</span>
+        <ul>
+          <li>Schwartz</li>
+          <li>Schwartz</li>
+          <li>Schwartz</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+
+```
