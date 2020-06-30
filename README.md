@@ -2190,4 +2190,231 @@ footer {
 
 ### 4.11 Tolv
 
+글자 중 가운데 글자만 transform 하는 것
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Products</li>
+          <li>Stockists</li>
+          <li>About us</li>
+        </ul>
+      </nav>
+      <!-- 글자 중간만 스타일링 하기 -->
+      <h1 class="logo">
+        T
+        <div>o</div>
+        lv
+      </h1>
+      <span>👀</span>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="hero__img"></div>
+        <div class="hero__text">
+          <h2>
+            Lift the blind to let in the light. A moment of calm before the day
+            begins.
+          </h2>
+          <span>
+            Featuring
+            <a href="#">Cherry Sofa</a>
+            and
+            <a href="#">Kile Coffee Table</a>
+          </span>
+        </div>
+      </div>
+      <div class="banner">
+        <h3 class="banner__title">Time for Living</h3>
+        <p>
+          Take time for life’s little moments. Browsing the news as you eat
+          breakfast. Setting the table for hungry guests. Sinking in to your
+          favourite armchair. At Tolv, your daily rituals are at the heart of
+          our design. We make furniture to give you your best day, every day.
+        </p>
+        <span>
+          Find out more
+          <a href="#">About us</a>
+        </span>
+      </div>
+      <section class="gallery">
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+      </section>
+    </main>
+  </body>
+</html>
+
+```
+
+#### _variables.scss
+
+```scss
+$orange: #ff6429;
+$bg: #efcb56;
+```
+
+#### _styles.scss
+
+```scss
+@import url("https://fonts.googleapis.com/css?family=Yrsa:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 60px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 100%;
+  padding: 0px 10%;
+
+  h1 {
+    place-self: center center;
+    font-family: "Yrsa";
+  }
+  > span {
+    justify-self: end;
+  }
+  nav {
+    ul {
+      display: flex;
+      font-family: "Montserrat", sans-serif;
+      // li 요소 중 마지막 요소를 제외하고
+      li:not(:last-chlid) {
+        margin-right: 10px;
+      }
+    }
+  }
+  .logo {
+    font-size: 48px;
+    font-weight: 500;
+    display: flex;
+    // 네 개의 글자 중 하나만 방향 틀기
+    div {
+      transform: rotateZ(-15deg);
+      margin: 0px -3px;
+    }
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: calc(100vh - 60px);
+  .hero__img {
+    background-image: url("https://source.unsplash.com/random/");
+    background-size: cover;
+    background-position: center center;
+  }
+  .hero__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      font-family: "Yrsa";
+      font-size: 52px;
+      text-align: center;
+      width: 60%;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+a {
+  font-weight: 600;
+  color: $orange;
+}
+
+.banner {
+  background-color: $bg;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    font-family: "Yrsa";
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+  p {
+    width: 50%;
+    text-align: center;
+    font-family: "Yrsa";
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  span {
+    font-size: 12px;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50vh;
+  .gallery__item {
+    background-image: url("https://source.unsplash.com/random/");
+    background-size: cover;
+    background-position: center;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    overflow: hidden;
+    &:first-child,
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(10) {
+      grid-column-start: span 2;
+    }
+    &:hover {
+      filter: blur(50px);
+    }
+  }
+}
+
+```
+
+### 4.13 Rodic Davidson
 
