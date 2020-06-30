@@ -2536,4 +2536,873 @@ main {
 
 ### 4.15 Beige Coding
 
+#### index.html
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Beigr</h1>
+      <nav>
+        <ul>
+          <!-- 빈 span 혹은 div를 이용하여 원을 만든다. -->
+          <li><span></span><a href="#">Kultur</a></li>
+          <li><span></span><a href="#">Menschen</a></li>
+          <li><span></span><a href="#">Reisen</a></li>
+          <li><span></span><a href="#">Design</a></li>
+          <li><span></span><a href="#">Mode</a></li>
+          <li><span></span><a href="#">Pflege</a></li>
+          <li><span></span><a href="#">Fair</a></li>
+        </ul>
+      </nav>
+      <span>👀</span>
+    </header>
+    <main class="posts">
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+      <section class="post">
+        <header class="post__header">
+          <span class="post__date">2020.02.24</span>
+          <span class="post__author">Marie Jaster</span>
+        </header>
+        <div class="post__content">
+          <div class="visible">
+            <h3>Hol dir Farbe in deine Inbox</h3>
+          </div>
+          <div class="invisible"></div>
+        </div>
+        <footer>
+          <span class="category">Newsletter</span>
+          <span class="comments">1개의 댓글</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
+
+```
+
+#### styles.scss
+
+```scss
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 40px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  nav {
+    ul {
+      display: flex;
+      li {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        &:nth-child(3n + 1) {
+          span {
+            background-color: #e4c464;
+          }
+        }
+        &:nth-child(3n + 2) {
+          span {
+            background-color: #56854a;
+          }
+        }
+        &:nth-child(3n + 3) {
+          span {
+            background-color: #97c2de;
+          }
+        }
+        // 빈 span에 높이와 너비를 주고 border-radius: 50%; 로 동그라미를 만든다.
+        span {
+          margin-right: 5px;
+          height: 15px;
+          width: 15px;
+          background-color: red;
+          border-radius: 50%;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 55vh;
+  .post {
+    cursor: pointer;
+    padding: 20px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    .post__header,
+    footer {
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 1px;
+    }
+    // 규칙성이 있게 색상 배치
+    &:nth-child(5n + 1) {
+      background-color: #dd433e;
+    }
+    &:nth-child(5n + 2) {
+      background-color: #e4c874;
+    }
+    &:nth-child(5n + 3) {
+      background-color: #198ca1;
+    }
+    &:nth-child(5n + 4) {
+      background-color: #ec9860;
+    }
+    &:nth-child(5n + 5) {
+      background-color: #ccb2a2;
+    }
+    // 마우스 올리면 이미지 출력
+    .post__content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        letter-spacing: 2px;
+        line-height: 1.3;
+        font-size: 26px;
+        text-align: center;
+      }
+      .invisible {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://images.prismic.io/beige/3479dcfd-17b4-4391-8b1c-506801d60786_Beige-Mode-Fashion-Menswear-Trends-2020-Gucci-Cruise-5.jpg?auto=compress,format?auto=format,compress&q=60&fit=crop&w=1200&h=1920");
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+    &:hover {
+      .post__content {
+        .visible {
+          display: none;
+        }
+        .invisible {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+```
+
+### 4.17 Donica Coding
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Donica Ida is an art director and designer working in editorial,
+        identity, and digital design.
+      </h1>
+    </header>
+    <div class="works">
+      <div class="works__header">
+        <span>Year</span>
+        <span>Client</span>
+        <span>Info</span>
+      </div>
+      <ul class="works__list">
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+        <li class="works__work">
+          <span>2019</span>
+          <span>Huffpost Highline</span>
+          <span>Investigative journalism meets digital storytelling.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="cv">
+      <span>Education</span>
+      MFA Design Entrepreneurship, School of Visual Arts; BFA Visual
+      Communication Design, University of Washington.
+      <span>Formerly at</span>
+      HuffPost Highline, Mary Review, Critical Mass, Pentagram.
+      <span>Select clients</span>
+      Airbnb, Condé Nast Traveler, Google, Planned Parenthood.
+    </div>
+    <div class="about">
+      <span>About</span>
+      Donica Ida is a Hawaii-born designer who loves beautiful typography and a
+      well-told story. She is the former Creative Director of HuffPost Highline
+      and Design Director of Mary Review. Donica lives in Brooklyn with her
+      <a href="#">husband</a> and splits her time between freelance work,
+      traveling, hikes, and ramen. She is currently available for new
+      opportunities.
+      <span>Connect</span>
+      <a href="#">Email</a>, <a href="#">Instagram</a>,
+      <a href="#">LinkedIn</a>, <a href="#">WorkingNotWorking</a>.
+    </div>
+  </body>
+</html>
+
+```
+
+#### _elements_.scss
+
+```scss
+@import "_variables";
+
+%tinyText {
+  color: $red;
+  font-size: 12px;
+  font-family: "Nunito";
+}
+
+%grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 5fr;
+}
+
+```
+
+#### _variables_.scss
+
+```scss
+$red: #fc3f33;
+$black: #444444;
+
+```
+
+#### styles.scss
+
+```scss
+@import url("https://fonts.googleapis.com/css?family=Nunito|PT+Serif:400,400i&display=swap");
+@import "_elements";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f0efeb;
+  color: $black;
+  padding: 30px 40px;
+  line-height: 2;
+}
+
+header {
+  font-size: 46px;
+  letter-spacing: 1px;
+  margin-bottom: 175px;
+}
+
+.works {
+  margin-bottom: 80px;
+  .works__header {
+    @extend %grid;
+    padding-bottom: 10px;
+    span {
+      @extend %tinyText;
+    }
+  }
+  .works__list {
+    .works__work {
+      cursor: pointer;
+      font-size: 20px;
+      border-top: 1px solid $black;
+      @extend %grid;
+      &:hover {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.cv,
+.about {
+  font-size: 30px;
+  span {
+    @extend %tinyText;
+  }
+}
+
+a {
+  color: $red;
+  &:hover {
+    font-style: italic;
+  }
+}
+
+.about {
+  padding-bottom: 80px;
+}
+
+```
+
+### 4.19 Canal Street
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Canal Street Market is a carefully curated retail market, food hall &
+          community space open year-round at 265 Canal Street.
+        </h1>
+        <div class="header__photo"></div>
+      </header>
+      <section class="about">
+        <h2>A New Kind of Market</h2>
+        <div class="about__columns">
+          <div class="about__column">
+            <div class="img__wrapper">
+              <img src="https://source.unsplash.com/random/1" />
+            </div>
+            <span>
+              Merging retail, food, art, and culture, Canal Street Market
+              highlights top retail and design concepts, restaurants, and
+              up-and-coming players in the downtown New York City community.
+            </span>
+          </div>
+          <div class="about__column">
+            <div class="img__wrapper">
+              <img src="https://source.unsplash.com/random/2" />
+            </div>
+            <span
+              >Merging retail, food, art, and culture, Canal Street Market
+              highlights top retail and design concepts, restaurants, and
+              up-and-coming players in the downtown New York City
+              community.</span
+            >
+          </div>
+          <div class="about__column">
+            <div class="img__wrapper">
+              <img src="https://source.unsplash.com/random/3" />
+            </div>
+            <span
+              >Merging retail, food, art, and culture, Canal Street Market
+              highlights top retail and design concepts, restaurants, and
+              up-and-coming players in the downtown New York City
+              community.</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="events">
+        <div class="events__header">
+          <span>nomad</span>
+          <h4>Market Events</h4>
+          <span>coder</span>
+        </div>
+        <div class="events__list">
+          <div class="events__event">
+            <span class="event__date">12/11</span>
+            Korean Wave
+          </div>
+          <div class="events__event">
+            <span class="event__date">12/11</span>
+            Korean Wave
+          </div>
+          <div class="events__event">
+            <span class="event__date">12/11</span>
+            Korean Wave
+          </div>
+        </div>
+        <a href="#" class="btn">See All</a>
+      </section>
+      <section class="location">
+        <div class="location__address">
+          <h3>265 Canal St. <span>New York, NY</span></h3>
+        </div>
+        <div class="location__address"></div>
+      </section>
+      <section class="contact">
+        <h4>Interested in becoming a vendor?</h4>
+        <a href="#" class="btn">Click Here</a>
+      </section>
+    </main>
+    <nav>
+      <ul>
+        <li><span>Food</span></li>
+        <li><span>Retail</span></li>
+        <li><span>Community</span></li>
+      </ul>
+    </nav>
+  </body>
+</html>
+
+```
+
+#### _variables.scss
+
+```scss
+$paddingLeft: 65px;
+
+```
+
+#### styles.scss
+
+```scss
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@1&display=swap");
+@import "_elements";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "B612 Mono", monospace;
+  margin-right: 180px;
+  nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 180px;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      grid-template-rows: 100vh;
+      li {
+        background-color: #f64344;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        span {
+          transform: rotateZ(-90deg);
+        }
+        &:first-child {
+          background-color: #5da3ec;
+        }
+        &:last-child {
+          background-color: #ffb301;
+        }
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Serif Display", serif;
+}
+
+main {
+  header {
+    margin-top: 250px;
+    h1 {
+      padding-left: $paddingLeft;
+      font-size: 80px;
+      width: 60%;
+      line-height: 1.2;
+      margin-bottom: 100px;
+    }
+    .header__photo {
+      width: 100%;
+      height: 120vh;
+      background-image: url("https://source.unsplash.com/random/12");
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}
+
+.about {
+  margin-top: 120px;
+  margin-bottom: 240px;
+  padding: 0px $paddingLeft;
+  h2 {
+    font-size: 120px;
+    width: 50%;
+    margin-bottom: 120px;
+  }
+  .about__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    .about__column {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 650px 20%;
+      gap: 30px;
+      .img__wrapper {
+        overflow: hidden;
+        img {
+          max-width: 100%;
+        }
+      }
+      span {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.events {
+  padding: 0px $paddingLeft;
+  display: grid;
+  justify-items: center;
+  margin-bottom: 120px;
+  .events__header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center center;
+    font-size: 64px;
+    h4 {
+      font-size: 94px;
+      text-align: center;
+    }
+  }
+  .events__list {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center center;
+    width: 100%;
+    .events__event {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .event__date {
+        margin-bottom: 30px;
+        font-size: 12px;
+      }
+    }
+  }
+  .btn {
+    margin-top: 120px;
+  }
+}
+
+.btn {
+  text-transform: lowercase;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 17px 60px;
+  transition: background-color 0.2s linear;
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.location {
+  padding: $paddingLeft;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 33vh;
+  gap: 60px;
+  .location__address {
+    font-size: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    border: 1px solid black;
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 200px 0px;
+  h4 {
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+}
+
+```
