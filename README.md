@@ -2418,3 +2418,122 @@ a {
 
 ### 4.13 Rodic Davidson
 
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <h1>Rodic Davison</h1>
+    <main>
+      <nav>
+        <ul>
+          <li>Projects</li>
+          <li>Practice</li>
+          <li>News</li>
+          <li>Exhibition</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/1" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/2" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/3" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/4" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/5" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/6" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+      <div class="photo">
+        <img src="https://source.unsplash.com/random/6" />
+        <h4>Suffolk Farmstead</h4>
+      </div>
+    </main>
+  </body>
+</html>
+
+```
+
+#### styles.scss
+
+```scss
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: grid;
+  grid-template-columns: 1.3fr 4fr;
+  padding: 20px;
+  font-size: 13px;
+  align-items: start;
+  h1 {
+    cursor: pointer;
+    font-weight: 500;
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+main {
+  display: grid;
+  // gap을 따로따로 넣기
+  column-gap: 20px;
+  row-gap: 80px;
+  grid-template-columns: repeat(2, 1fr);
+  nav {
+    grid-column-start: span 2;
+    ul {
+      display: flex;
+      li:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  .photo {
+    &:hover {
+      h4 {
+        color: blue;
+      }
+    }
+    img {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+```
+
+### 4.15 Beige Coding
+
+
