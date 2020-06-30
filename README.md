@@ -3404,5 +3404,238 @@ main {
     margin-bottom: 30px;
   }
 }
+```
+
+### 4.21 One hundred
+
+#### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>(S)CSS Masterclass</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Search</li>
+          <li>Won Hundred</li>
+          <li>Shopping Bag (0)</li>
+          <li>Journal</li>
+          <li>Women</li>
+          <li>Men</li>
+          <li>Currency</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Spring Summer – Volume 2</h1>
+      <h6>
+        Get your wardrobe ready for those upcoming warm spring days with our
+        second delivery of Spring Summer 20.
+      </h6>
+      <div class="hero">
+        <div class="hero__img"></div>
+        <div class="hero__img"></div>
+        <div class="hero__img"></div>
+        <div class="hero__img"></div>
+      </div>
+      <section class="arrivals">
+        <h4 class="arrivals__title">Selected New Arrivals</h4>
+        <div class="wrapper">
+          <article class="product">
+            <div class="product__photo"></div>
+            <div class="product__data">
+              <span class="name">Jonah Shirt - Zen Blue</span>
+              <span class="price">900 DKK</span>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__photo"></div>
+            <div class="product__data">
+              <span class="name">Jonah Shirt - Zen Blue</span>
+              <span class="price">900 DKK</span>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__photo"></div>
+            <div class="product__data">
+              <span class="name">Jonah Shirt - Zen Blue</span>
+              <span class="price">900 DKK</span>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__photo"></div>
+            <div class="product__data">
+              <span class="name">Jonah Shirt - Zen Blue</span>
+              <span class="price">900 DKK</span>
+            </div>
+          </article>
+          <span class="arrivals__category">Shop Women's New Arrivals</span>
+          <span class="arrivals__category">Shop Men's New Arrivals</span>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </footer>
+  </body>
+</html>
+
+```
+
+#### styles.scss
+
+grid 내부에 border를 주고 싶다면 background-color를 주고 gap을 이용한다.
+
+```scss
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "_elements";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Serif Display", monospace;
+  padding: 45px;
+}
+
+header {
+  background-color: black;
+  border: 1px solid black;
+  margin-bottom: 100px;
+  nav {
+    ul {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 60px);
+      li {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(2) {
+          grid-column-start: span 2;
+          font-size: 32px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+main {
+  h1,
+  h6 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+  }
+  h6 {
+    font-family: "B612 Mono";
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 80vh;
+  margin-bottom: 150px;
+  .hero__img {
+    background-image: url("https://source.unsplash.com/random/");
+    background-position: center center;
+    background-size: cover;
+    &:first-child {
+      background-image: url("https://source.unsplash.com/random/1");
+    }
+    &:last-child {
+      background-image: url("https://source.unsplash.com/random/2");
+    }
+    &:nth-last-child(2) {
+      background-image: url("https://source.unsplash.com/random/3");
+    }
+  }
+}
+
+.arrivals {
+  h4 {
+    font-size: 36px;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+  .wrapper {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80vh auto;
+    // grid에 border color가 없기 때문에 배경색을 설정하고 gap을 준다.
+    background-color: black;
+    gap: 1px;
+    .product,
+    .arrivals__category {
+      background-color: white;
+    }
+    .arrivals__category {
+      grid-column-start: span 2;
+      text-align: center;
+      font-size: 20px;
+      padding: 20px 0px;
+    }
+    .product {
+      padding: 40px;
+      display: grid;
+      gap: 20px;
+      grid-template-rows: 80% auto;
+      .product__photo {
+        background-image: url("https://source.unsplash.com/random/4");
+        background-position: center center;
+        background-size: cover;
+      }
+      .product__data {
+        display: flex;
+        flex-direction: column;
+        .price {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin: 100px 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10fr 2fr;
+  background-color: black;
+  gap: 1px;
+  height: 200px;
+  border: 1px solid black;
+  div {
+    background-color: white;
+    &:first-child {
+      grid-column: span 2;
+    }
+    &:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
 
 ```
